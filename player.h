@@ -18,6 +18,8 @@ class Player : public Charachter {
     virtual void attack(std::shared_ptr<Chamber> ch, std::string dir, std::shared_ptr<Object> myPtr) override;
 
     virtual void kill(std::shared_ptr<Object> theKilled, std::shared_ptr<Object> myPtr) override;
+
+    int beKilled(std::shared_ptr<Object> o) override;
     
     virtual void beAttacked(std::shared_ptr<Object>, std::shared_ptr<Object> myPtr) override;
 

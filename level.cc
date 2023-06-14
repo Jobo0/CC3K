@@ -42,7 +42,7 @@ int Level::whichChamber(int location) { // manually define where the chambers ar
   if (inBox(36, 15, 41, 8, width, location)) {
     return 4;
   }
-  // avoids the overlap by checking for chamber 2 first (this is hard coded sol. anyway)
+  // avoids the overlap by checking for chamber 2 first 
   if (inBox(38, 2, 39, 12, width, location)) {
     return 1;
   }
@@ -97,7 +97,7 @@ void Level::movePlayer(std::string dir) {
     
     Action << PC->getAction();
 
-    // this is stupid just make player know their coordinates but now its too late
+    // mistake: should have allowed players/objects to just know their own coordinates
 
 
 }
@@ -134,6 +134,8 @@ void Level::enemiesScanAttack() {
       }
     }
     Action << chambers[playerChamber]->getAction();
+    //std::cout << PC->getInfo() << std::endl;
+    //std::cout << "PC INFO GOT" << std::endl;
 };
 
 void Level::enemiesMove(std::default_random_engine &rng) {

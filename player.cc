@@ -28,6 +28,13 @@ void Player::kill(std::shared_ptr<Object> theKilled, std::shared_ptr<Object> myP
     Object::setGold(g);
 };
 
+int Player::beKilled(std::shared_ptr<Object> o)  {
+    std::ostringstream oss;
+    oss << Object::getSymbol() << " (" << Object::getGold() << "G). Player is dead.";
+    o->addAction(oss.str());
+    return Object::getGold();
+};
+
 void Player::beAttacked(std::shared_ptr<Object> o, std::shared_ptr<Object> myPtr) {
     std::vector<int> v {1, 2};
 
